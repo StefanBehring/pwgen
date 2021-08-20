@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Password Generator</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Password Generator</h1>
+		</header>
+		<main>
+			<section class="formular">
+				<label for="uppercase">Uppercase</label>
+				<input type="checkbox" id="uppercase" />
+				<label for="numbers">Numbers</label>
+				<input type="checkbox" id="numbers" />
+				<label for="special">Special</label>
+				<input type="checkbox" id="special" />
+				<label for="pwlength">Length</label>
+				<input type="range" id="pwlength" min="8" max="40" step="1.0" />
+				<button type="submit" id="button">Create</button>
+			</section>
+			<section class="result">
+				<label for="password">Your new password!</label>
+				<input type="text" id="password" />
+			</section>
+		</main>
+		<footer>
+			<p>&copy2021 Behring Stefan - V: 0.1</p>
+		</footer>
+		<script src="js/script.js"></script>
+	</body>
+</html>

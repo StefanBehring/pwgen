@@ -1,0 +1,16 @@
+.formular {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+	width: 80vw;
+	max-width: 25rem;
+}
+
+.result {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 2rem;
+	visibility: hidden;
+	width: 80vw;
+	max-width: 25rem;
+}
