@@ -86,7 +86,6 @@ const scanPassword = (password, searchArray) => {
 const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 	let isCorrect = false;
 	let password = '';
-	console.log(search);
 	do {
 		// Create a password
 		password = '';
@@ -118,8 +117,9 @@ const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 pwlength.addEventListener('change', () => {
 	const value = pwlength.value;
 	if (
-		!Number.isInteger(value) ||
-		(Number.isInteger(value) && value < 8 && value > 40)
+		!Number.isInteger(parseInt(value)) ||
+		parseInt(value) < 8 ||
+		parseInt(value) > 40
 	) {
 		alert('Input must be a number between 8 and 40!');
 		pwlength.value = 16;
