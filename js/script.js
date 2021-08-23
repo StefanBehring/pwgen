@@ -7,6 +7,7 @@ const btn = document.getElementById('button');
 
 const result = document.getElementById('result');
 const yourpassword = document.getElementById('yourpassword');
+const btnCopy = document.getElementById('btnCopy');
 
 const letters = [
 	'a',
@@ -73,6 +74,7 @@ const lettersSpecial = ['=', '+', '-', '*', '?', '(', ')', '_'];
 let lettersArray = [];
 
 const scanPassword = (password, searchArray) => {
+	// Loop over the password and return true if there is a match
 	for (let i = 0; i < password.length; i++) {
 		for (let letter of searchArray) {
 			if (password[i] == letter) {
@@ -114,7 +116,16 @@ const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 	return password;
 };
 
+btnCopy.addEventListener('click', () => {
+	// Copy to clipboard
+	yourpassword.select();
+	yourpassword.setSelectionRange(0, 99999);
+	navigator.clipboard.writeText(yourpassword.value);
+});
+
 pwlength.addEventListener('change', () => {
+	// Check if the pwlength is an Integer
+	// Check if the value is between 8 and 40
 	const value = pwlength.value;
 	if (
 		!Number.isInteger(parseInt(value)) ||
@@ -127,6 +138,8 @@ pwlength.addEventListener('change', () => {
 });
 
 btn.addEventListener('click', () => {
+	// Create password
+	// Add depending on specifications to the lettersArray
 	lettersArray.push(...letters);
 	if (uppercase.checked) {
 		lettersArray.push(...lettersUppercase);
@@ -143,7 +156,9 @@ btn.addEventListener('click', () => {
 		numbers.checked,
 		special.checked
 	);
+	// Make the result visible
 	result.style.visibility = 'visible';
 	yourpassword.value = newPassword;
+	// Reset search array
 	lettersArray.length = 0;
 });
