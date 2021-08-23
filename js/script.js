@@ -5,6 +5,9 @@ const pwlength = document.getElementById('pwlength');
 
 const btn = document.getElementById('button');
 
+const result = document.getElementById('result');
+const yourpassword = document.getElementById('yourpassword');
+
 const letters = [
 	'a',
 	'b',
@@ -69,7 +72,18 @@ const lettersSpecial = ['=', '+', '-', '*', '?', '(', ')', '_'];
 
 let lettersArray = [];
 
-const createPassword = (search) => {
+const scanPassword = (password, searchArray) => {
+	for (let i = 0; i < password.length; i++) {
+		for (let letter of searchArray) {
+			if (password[i] == letter) {
+				return true;
+			}
+		}
+	}
+	return false;
+};
+
+const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 	let isCorrect = false;
 	let password = '';
 	console.log(search);
@@ -81,7 +95,19 @@ const createPassword = (search) => {
 			password += search[index];
 		}
 		// Check if password fullfills requirements
-		isCorrect = true;
+		let hasUppercase = !needsUppercase;
+		let hasNumbers = !needsNumbers;
+		let hasSpecial = !needsSpecial;
+		if (needsUppercase) {
+			hasUppercase = scanPassword(password, lettersUppercase);
+		}
+		if (hasUppercase && needsNumbers) {
+			hasNumbers = scanPassword(password, lettersNumbers);
+		}
+		if (hasUppercase && hasNumbers && needsSpecial) {
+			hasSpecial = scanPassword(password, lettersSpecial);
+		}
+		if (hasUppercase && hasNumbers && hasSpecial) isCorrect = true;
 	} while (!isCorrect);
 	return password;
 };
@@ -97,10 +123,13 @@ btn.addEventListener('click', () => {
 	if (special.checked) {
 		lettersArray.push(...lettersSpecial);
 	}
-	console.log(pwlength.value);
-	console.log(lettersArray);
-	let result = createPassword(lettersArray);
-	console.log(result);
+	let newPassword = createPassword(
+		lettersArray,
+		uppercase.checked,
+		numbers.checked,
+		special.checked
+	);
+	result.style.visibility = 'visible';
+	yourpassword.value = newPassword;
 	lettersArray.length = 0;
-	console.log(lettersArray);
 });
