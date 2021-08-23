@@ -115,6 +115,17 @@ const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 	return password;
 };
 
+pwlength.addEventListener('change', () => {
+	const value = pwlength.value;
+	if (
+		!Number.isInteger(value) ||
+		(Number.isInteger(value) && value < 8 && value > 40)
+	) {
+		alert('Input must be a number between 8 and 40!');
+		pwlength.value = 16;
+	}
+});
+
 btn.addEventListener('click', () => {
 	lettersArray.push(...letters);
 	if (uppercase.checked) {
