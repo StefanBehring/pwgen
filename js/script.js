@@ -95,19 +95,22 @@ const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 			password += search[index];
 		}
 		// Check if password fullfills requirements
+		const hasLetters = scanPassword(password, letters);
 		let hasUppercase = !needsUppercase;
 		let hasNumbers = !needsNumbers;
 		let hasSpecial = !needsSpecial;
-		if (needsUppercase) {
+
+		if (hasLetters && needsUppercase) {
 			hasUppercase = scanPassword(password, lettersUppercase);
 		}
-		if (hasUppercase && needsNumbers) {
+		if (hasLetters && hasUppercase && needsNumbers) {
 			hasNumbers = scanPassword(password, lettersNumbers);
 		}
-		if (hasUppercase && hasNumbers && needsSpecial) {
+		if (hasLetters && hasUppercase && hasNumbers && needsSpecial) {
 			hasSpecial = scanPassword(password, lettersSpecial);
 		}
-		if (hasUppercase && hasNumbers && hasSpecial) isCorrect = true;
+		if (hasLetters && hasUppercase && hasNumbers && hasSpecial)
+			isCorrect = true;
 	} while (!isCorrect);
 	return password;
 };

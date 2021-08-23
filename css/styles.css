@@ -1,9 +1,108 @@
+:root {
+	--prim-color-1: #ffdc73;
+	--prim-color-2: #ffcf40;
+	--prim-color-3: #ffbf00;
+	--prim-color-4: #bf9b30;
+	--prim-color-5: #a67c00;
+	--comp-color-1: #6c8cd5;
+	--comp-color-2: #4671d5;
+	--comp-color-3: #1240ab;
+	--comp-color-4: #2a4480;
+	--comp-color-5: #06266f;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: var(--prim-color-1);
+	color: var(--comp-color-5);
+	display: flex;
+	flex-direction: column;
+	font-family: 'Ubuntu Mono', monospace;
+	margin: auto;
+	width: 25rem;
+}
+
+header {
+	background-color: var(--prim-color-2);
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+main {
+	background-color: var(--prim-color-2);
+	width: 100%;
+}
+
+footer {
+	background-color: var(--prim-color-2);
+	text-align: center;
+	width: 100%;
+}
+
+h1 {
+	color: var(--prim-color-1);
+	letter-spacing: 0.2rem;
+	text-shadow: -2px 0 var(--comp-color-5), 0 2px var(--comp-color-5),
+		2px 0 var(--comp-color-5), 0 -2px var(--comp-color-5);
+}
+
 .formular {
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 2rem;
-	width: 80vw;
-	max-width: 25rem;
+	width: 25rem;
+}
+
+.formular-settings {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.formular-setting {
+	display: flex;
+	flex-direction: column;
+}
+
+.formular-label {
+	text-align: center;
+	margin-bottom: 0.4rem;
+}
+
+.formular-input {
+	align-self: center;
+	background-color: var(--comp-color-1);
+	border: 1px solid var(--comp-color-5);
+	color: var(--prim-color-1);
+}
+
+.formular-text {
+	background-color: var(--comp-color-1);
+	border: 1px solid var(--comp-color-5);
+	color: var(--prim-color-1);
+	text-align: center;
+	width: 3rem;
+}
+
+.formular-button {
+	background-color: var(--comp-color-4);
+	border: 1px solid var(--comp-color-5);
+	border-radius: 30%;
+	color: var(--prim-color-1);
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	margin: 0.7rem auto;
+}
+
+.formular-button:hover {
+	background-color: var(--comp-color-2);
 }
 
 .result {
@@ -13,4 +112,18 @@
 	visibility: hidden;
 	width: 80vw;
 	max-width: 25rem;
+}
+
+.result-label {
+	align-self: center;
+	margin-bottom: 0.4rem;
+}
+
+.result-text {
+	align-self: center;
+	background-color: var(--comp-color-1);
+	border: 1px solid var(--comp-color-5);
+	color: var(--prim-color-1);
+	text-align: center;
+	width: 16rem;
 }
