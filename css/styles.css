@@ -75,11 +75,8 @@ h1 {
 	margin-bottom: 0.4rem;
 }
 
-.settings__input {
+.settings__checkbox {
 	align-self: center;
-	background-color: var(--comp-color-1);
-	border: 1px solid var(--comp-color-5);
-	color: var(--prim-color-1);
 }
 
 .settings__text {

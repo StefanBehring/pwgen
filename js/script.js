@@ -92,8 +92,9 @@ const createPassword = (search, needsUppercase, needsNumbers, needsSpecial) => {
 		// Create a password
 		password = '';
 		for (let i = 0; i < pwlength.value; i++) {
-			let index = Math.round(Math.random() * search.length);
+			let index = Math.floor(Math.random() * search.length);
 			password += search[index];
+			console.log(index, search.length);
 		}
 		// Check if password fullfills requirements
 		const hasLetters = scanPassword(password, letters);
