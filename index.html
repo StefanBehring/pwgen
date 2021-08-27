@@ -14,30 +14,36 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<header>
-			<h1>Password Generator</h1>
-		</header>
+		<h1>Password Generator</h1>
 		<main>
 			<section class="formular">
-				<div class="formular-settings">
-					<div class="formular-setting">
-						<label class="formular-label" for="pwlength">Length</label>
-						<input type="text" id="pwlength" class="formular-text" value="16" />
+				<div class="settings">
+					<div class="settings__setting">
+						<label class="settings__label" for="pwlength">Length</label>
+						<input
+							type="number"
+							id="pwlength"
+							class="settings__text"
+							value="16"
+							step="1.0"
+							min="8"
+							max="40"
+						/>
 					</div>
-					<div class="formular-setting">
-						<label class="formular-label" for="uppercase">Uppercase</label>
-						<input class="formular-input" type="checkbox" id="uppercase" />
+					<div class="settings__setting">
+						<label class="settings__label" for="uppercase">Uppercase</label>
+						<input class="settings__input" type="checkbox" id="uppercase" />
 					</div>
-					<div class="formular-setting">
-						<label class="formular-label" for="numbers">Numbers</label>
-						<input class="formular-input" type="checkbox" id="numbers" />
+					<div class="settings__setting">
+						<label class="settings__label" for="numbers">Numbers</label>
+						<input class="settings__input" type="checkbox" id="numbers" />
 					</div>
-					<div class="formular-setting">
-						<label class="formular-label" for="special">Special</label>
-						<input class="formular-input" type="checkbox" id="special" />
+					<div class="settings__setting">
+						<label class="settings__label" for="special">Special</label>
+						<input class="settings__input" type="checkbox" id="special" />
 					</div>
 				</div>
-				<button type="submit" id="button" class="formular-button">
+				<button type="submit" id="button" class="formular__button">
 					Create
 				</button>
 			</section>
@@ -46,13 +52,13 @@
 					>Your new password!</label
 				>
 				<input type="text" class="result-text" id="yourpassword" />
-				<button type="submit" id="btnCopy" class="formular-button">
+				<button type="submit" id="btnCopy" class="formular__button">
 					Copy to clipboard
 				</button>
 			</section>
 		</main>
 		<footer>
-			<p>&copy2021 Behring Stefan - V: 0.1</p>
+			<p>&copy2021 Behring Stefan - V: 0.8</p>
 		</footer>
 		<script src="js/script.js"></script>
 	</body>
