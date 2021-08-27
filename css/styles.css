@@ -12,6 +12,7 @@
 }
 
 html {
+	background-color: var(--prim-color-1);
 	box-sizing: border-box;
 }
 
@@ -20,7 +21,8 @@ html {
 }
 
 body {
-	background-color: var(--prim-color-1);
+	align-items: center;
+	background-color: var(--prim-color-2);
 	color: var(--comp-color-5);
 	display: flex;
 	flex-direction: column;
@@ -30,19 +32,16 @@ body {
 }
 
 header {
-	background-color: var(--prim-color-2);
 	display: flex;
 	justify-content: center;
 	width: 100%;
 }
 
 main {
-	background-color: var(--prim-color-2);
 	width: 100%;
 }
 
 footer {
-	background-color: var(--prim-color-2);
 	text-align: center;
 	width: 100%;
 }
@@ -61,29 +60,29 @@ h1 {
 	width: 25rem;
 }
 
-.formular-settings {
+.settings {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-.formular-setting {
+.settings__setting {
 	display: flex;
 	flex-direction: column;
 }
 
-.formular-label {
+.settings__label {
 	text-align: center;
 	margin-bottom: 0.4rem;
 }
 
-.formular-input {
+.settings__input {
 	align-self: center;
 	background-color: var(--comp-color-1);
 	border: 1px solid var(--comp-color-5);
 	color: var(--prim-color-1);
 }
 
-.formular-text {
+.settings__text {
 	background-color: var(--comp-color-1);
 	border: 1px solid var(--comp-color-5);
 	color: var(--prim-color-1);
@@ -91,17 +90,17 @@ h1 {
 	width: 3rem;
 }
 
-.formular-button {
+.formular__button {
 	background-color: var(--comp-color-4);
 	border: 1px solid var(--comp-color-5);
-	border-radius: 30%;
+	border-radius: 10px;
 	color: var(--prim-color-1);
 	font-weight: bold;
 	padding: 0.5rem 1rem;
 	margin: 0.7rem auto;
 }
 
-.formular-button:hover {
+.formular__button:hover {
 	background-color: var(--comp-color-2);
 }
 
