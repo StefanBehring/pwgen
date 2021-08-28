@@ -84,6 +84,7 @@ h1 {
 	border: 1px solid var(--comp-color-5);
 	color: var(--prim-color-1);
 	text-align: center;
+	margin-top: 0.8rem;
 	width: 3rem;
 }
 
